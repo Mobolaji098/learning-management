@@ -67,7 +67,7 @@ dependencies:
     version: 1.1.6(@types/react-dom@19.0.2)(@types/react@19.0.2)(react-dom@19.0.0)(react@19.0.0)
   '@reduxjs/toolkit':
     specifier: ^2.5.0
-    version: 2.5.0(react@19.0.0)
+    version: 2.5.0(react-redux@9.2.0)(react@19.0.0)
   '@stripe/react-stripe-js':
     specifier: ^3.1.1
     version: 3.1.1(@stripe/stripe-js@5.4.0)(react-dom@19.0.0)(react@19.0.0)
@@ -125,6 +125,9 @@ dependencies:
   react-player:
     specifier: ^2.16.0
     version: 2.16.0(react@19.0.0)
+  react-redux:
+    specifier: ^9.2.0
+    version: 9.2.0(@types/react@19.0.2)(react@19.0.0)(redux@5.0.1)
   sonner:
     specifier: ^1.7.1
     version: 1.7.1(react-dom@19.0.0)(react@19.0.0)
@@ -1813,7 +1816,7 @@ packages:
     resolution: {integrity: sha512-A9+lCBZoaMJlVKcRBz2YByCG+Cp2t6nAnMnNba+XiWxnj6r4JUFqfsgwocMBZU9LPtdxC6wB56ySYpc7LQIoJg==}
     dev: false
 
-  /@reduxjs/toolkit@2.5.0(react@19.0.0):
+  /@reduxjs/toolkit@2.5.0(react-redux@9.2.0)(react@19.0.0):
     resolution: {integrity: sha512-awNe2oTodsZ6LmRqmkFhtb/KH03hUhxOamEQy411m3Njj3BbFvoBovxo4Q1cBWnV1ErprVj9MlF0UPXkng0eyg==}
     peerDependencies:
       react: ^16.9.0 || ^17.0.0 || ^18 || ^19
@@ -1826,6 +1829,7 @@ packages:
     dependencies:
       immer: 10.1.1
       react: 19.0.0
+      react-redux: 9.2.0(@types/react@19.0.2)(react@19.0.0)(redux@5.0.1)
       redux: 5.0.1
       redux-thunk: 3.1.0(redux@5.0.1)
       reselect: 5.1.1
