@@ -12,7 +12,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { ChapterFormData, chapterSchema } from "@/lib/schemas";
 import { addChapter, closeChapterModal, editChapter } from "@/state";
-import { useAppDispatch, useAppSelector } from "@/state/redux";
+import {RootState, useAppDispatch, useAppSelector} from "@/state/redux";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { X } from "lucide-react";
 import React, { useEffect } from "react";
@@ -27,7 +27,7 @@ const ChapterModal = () => {
         selectedSectionIndex,
         selectedChapterIndex,
         sections,
-    } = useAppSelector((state) => state.global.courseEditor);
+    } = useAppSelector((state:RootState) => state.global.courseEditor);
 
     const chapter: Chapter | undefined =
         selectedSectionIndex !== null && selectedChapterIndex !== null
