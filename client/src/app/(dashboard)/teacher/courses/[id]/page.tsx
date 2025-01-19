@@ -16,7 +16,7 @@ import {
     useUpdateCourseMutation,
     useGetUploadVideoUrlMutation,
 } from "@/state/api";
-import { useAppDispatch, useAppSelector } from "@/state/redux";
+import {RootState, useAppDispatch, useAppSelector} from "@/state/redux";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowLeft, Plus } from "lucide-react";
 import { useParams, useRouter } from "next/navigation";
@@ -35,7 +35,7 @@ const CourseEditor = () => {
     const [getUploadVideoUrl] = useGetUploadVideoUrlMutation();
 
     const dispatch = useAppDispatch();
-    const { sections } = useAppSelector((state) => state.global.courseEditor);
+    const { sections } = useAppSelector((state:RootState) => state.global.courseEditor);
 
     const methods = useForm<CourseFormData>({
         resolver: zodResolver(courseSchema),

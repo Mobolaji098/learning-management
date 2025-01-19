@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { SectionFormData, sectionSchema } from "@/lib/schemas";
 import { addSection, closeSectionModal, editSection } from "@/state";
-import { useAppDispatch, useAppSelector } from "@/state/redux";
+import {RootState, useAppDispatch, useAppSelector} from "@/state/redux";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { X } from "lucide-react";
 import React, { useEffect } from "react";
@@ -15,7 +15,7 @@ import { v4 as uuidv4 } from "uuid";
 const SectionModal = () => {
     const dispatch = useAppDispatch();
     const { isSectionModalOpen, selectedSectionIndex, sections } = useAppSelector(
-        (state) => state.global.courseEditor
+        (state:RootState) => state.global.courseEditor
     );
 
     const section =
