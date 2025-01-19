@@ -64,17 +64,15 @@ if(!isProduction) {
 }
 
 // aws production environment
-const severlessApp = serverless(app);
-
-export const handler = async (event:any, context:any) => {
-    if (event === "seed"){
+const serverlessApp = serverless(app);
+export const handler = async (event: any, context: any) => {
+    if (event.action === "seed") {
         await seed();
         return {
             statusCode: 200,
-            body: JSON.stringify({message:"Data seeded successfully."}),
-        }
+            body: JSON.stringify({ message: "Data seeded successfully" }),
+        };
+    } else {
+        return serverlessApp(event, context);
     }
-    else{
-        return severlessApp(event,context)
-    }
-}
+};
